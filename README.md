@@ -1,6 +1,6 @@
 # File Descriptions 
-* **`modismoaps`** plots a MODIS Mosaic of Antarctica image on a polar stereographic map. Also plots grounding lines or coastlines. 
-* **`modismoa`** (not recommended) same as `modismoaps`, but this function is for use with Matlab's Mapping Toolbox. 
+* **`modismoaps`** plots a MODIS Mosaic of Antarctica image on a polar stereographic map. Also plots grounding lines or coastlines. This function is fast and does not hijack the colormap. 
+* **`modismoa`** (not recommended because it's slow and clunky) same as `modismoaps`, but this function is for use with Matlab's Mapping Toolbox. 
 
 # Requirements 
 You'll need [Antarctic Mapping Tools for Matlab](https://github.com/chadagreene/Antarctic-Mapping-Tools) (Greene et al., 2017). You'll also need to download the data, described below.
