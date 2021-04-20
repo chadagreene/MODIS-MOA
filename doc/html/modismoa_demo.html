@@ -1,0 +1,496 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>modismoa version 4</title><meta name="generator" content="MATLAB 8.0"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2014-08-28"><meta name="DC.source" content="modismoa_demo.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, tt, code { font-size:12px; }
+pre { margin:0px 0px 20px; }
+pre.error { color:red; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1><tt>modismoa</tt> version 4</h1><!--introduction--><p>The <tt>modismoa</tt> function plots Moderate Resolution Imaging Spectroradiometer (MODIS) Mosaic of Antarctica (MOA) images, grounding lines and coastlines. Plotted data are high-pass 1.</p><p>This function is a plugin for Chad Greene's <a href="http://www.mathworks.com/matlabcentral/fileexchange/47638">Antarctic Mapping Tools</a> package.</p><p><b>From the file description on the National Snow and Ice Data Center (<a href="http://nsidc.org/data/moa/">NSIDC</a>) website:</b></p><p>The National Snow and Ice Data Center (NSIDC) and the University of New Hampshire assembled two digital image maps and two snow-grain-size images of the Antarctic continent and surrounding islands that provide a nearly-perfect cloud-free view of the ice sheet, ice shelves, and land surfaces using two different sets of data:</p><div><ul><li>MODIS Mosaic of Antarctica 2003-2004 (MOA2004) Image Map</li><li>MODIS Mosaic of Antarctica 2008-2009 (MOA2009) Image Map.</li></ul></div><p>The MOA2004 Image Map consists of two cloud-free digital image maps that show mean surface morphology and a quantitative measure of optical snow grain size on the Antarctic continent and surrounding islands using 260 orbit swaths from the Moderate Resolution Imaging Spectroradiometer (MODIS) instruments on board the NASA EOS Aqua and Terra satellites. The 260 orbit swaths used to create the 2003-2004 MOA Surface Morphology Image Map was acquired 20 November 2003 through 29 February 2004 for the full spring-summer season. Corresponding coastlines and ice sheet grounding lines are also provided.</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Syntax</a></li><li><a href="#2">Description</a></li><li><a href="#3">Requirements</a></li><li><a href="#4">Installation</a></li><li><a href="#5">Example 1: Plot a Mosaic of Antarctica</a></li><li><a href="#6">Example 2: Plot coast line and grounding line</a></li><li><a href="#8">Example 3: MOA plot zoomed based on name of a location</a></li><li><a href="#9">Example 4: MOA plot of a specified width</a></li><li><a href="#10">Example 5: Centering on arbitrary geographic coordinates</a></li><li><a href="#11">Example 6: Include an inset</a></li><li><a href="#12">Example 7: Specify a year</a></li><li><a href="#14">Example 8: Specify resolution</a></li><li><a href="#15">Example 9: Specify contrast</a></li><li><a href="#16">Example 10: Mimic MOA's logo</a></li><li><a href="#18">Citing these Data</a></li><li><a href="#19">Author Info</a></li></ul></div><h2>Syntax<a name="1"></a></h2><pre>modismoa
+modismoa(lat,lon)
+modismoa('location')
+modismoa(...,mapwidth)
+modismoa(...,'year')
+modismoa(...,'inset','insetLocation')
+modismoa(...,'resolution',res)
+modismoa(...,'contrast',ContrastOption)
+modismoa(...,'clearocean')
+modismoa('gl')
+modismoa('gl','propertyName',propertyValue)
+modismoa('coast')
+modismoa('coast','propertyName',propertyValue)
+h = modismoa(...)</pre><h2>Description<a name="2"></a></h2><p><tt>modismoa</tt> plots a polar stereographic 71 image of Antarctica.</p><p><tt>modismoa(lat,lon)</tt> centers a 500-kilometer-wide map at the location given by <tt>lat</tt>, <tt>lon</tt>.</p><p><tt>modismoa('location')</tt> searches the <a href="http://www.scar.org/">SCAR</a> database for the specified <tt>'location'</tt> and centers a map at that location. (See the <tt>scarloc</tt> function in the Bedmap2 Toolbox for Matlab).</p><p><tt>modismoa(...,mapwidth)</tt> centers a <tt>mapwidth</tt>-kilometer map at the specified location.  Default mapwidth is 500 km.</p><p><tt>modismoa(...,'year')</tt> specifies a year of MODIS MOA image, grounding line, or coast line.  The year must be a string (enclosed by apostrophes) and can only be <tt>'2004'</tt> or <tt>'2009'</tt>. Default year is <tt>'2009'</tt>.</p><p><tt>modismoa(...,,'inset','location')</tt> places an inset at one of these cardinal value locations:</p><div><ul><li><tt>'southeast'</tt>   lower right corner (default)</li><li><tt>'northwest'</tt>   upper left corner</li><li><tt>'northeast'</tt>   upper right corner</li><li><tt>'southwest'</tt>   lower left corner</li></ul></div><p><tt>modismoa(...,'resolution',res)</tt> specifies the resolution of the plotted data.  Can be 750 m, 125 m, or <tt>'downsampled'</tt>.  By default, a map of width greater than 2000 km will plot 750 m data downsampled to 3750 m; for 400 &lt; mapwidth &lt;= 2000 km, 750 m resolution data are plotted; for maps up to 400 kilometers wide, 125 m data are plotted. Plotting 125 m data for very large areas might crash your computer.</p><p><tt>modismoa(...,'contrast',ContrastOption)</tt> specifies contrast, or the axis limits of the color scale when plotting 125 m or non-downsampled 750 m resolution data. Specifying contrast on a large downsampled 750 image will have no effect. Following the contrast options described in the web-based <a href="http://nsidc.org/data/moa/users_guide.html">MOA map users' guide</a>, <tt>ContrastOption</tt> may be:</p><div><ul><li><tt>'uhc'</tt>     (ultra-high contrast <tt>[15875 16125]</tt>)</li><li><tt>'vhc'</tt>  	(very high contrast <tt>[15800 16200]</tt>)</li><li><tt>'hc'</tt>  	(high contrast <tt>[15500 16500]</tt>)</li><li><tt>'moa'</tt>  	(nominal contrast <tt>[15000 17000]</tt>)</li><li><tt>'lc'</tt>   	(low contrast <tt>[12000 20000]</tt>)</li><li><tt>'vlc'</tt>  	(very low contrast <tt>[9000 23000]</tt>)</li><li><tt>'ulc'</tt>   	(ultra-low contrast <tt>[1 32000]</tt>)</li><li><tt>NumericRange</tt> (any two-element range)</li></ul></div><p>Setting contrast to a <tt>NumericRange</tt> is equivalent to following the <tt>modismoa</tt> command with <tt>caxis(NumericRange)</tt>.</p><p><tt>modismoa(...,'clearocean')</tt> sets all zero values to <tt>NaN</tt> to make the ocean clear. Note that this usage may still leave dark edges around the continent. If you would like to plot ocean data alongside a <tt>modismoa</tt> image, consider plotting the <tt>modismoa</tt> image first.</p><p><tt>modismoa('gl')</tt> plots the MODIS MOA grounding line.</p><p><tt>modismoa('gl','propertyName',propertyValue)</tt> formats the grounding line with name-value marker style properties.</p><p><tt>modismoa('cl')</tt> plots the MODIS MOA coast line.</p><p><tt>modismoa('cl','propertyName',propertyValue)</tt> formats the coast line with name-value marker style properties.</p><p><tt>h = modismoa(...)</tt> returns the handle <tt>h</tt> of plotted object(s).</p><h2>Requirements<a name="3"></a></h2><p>This function requires Matlab's Mapping Toolbox and the Antarctic Mapping Tools package, which is available free of charge on the Mathworks File Exchange site.</p><h2>Installation<a name="4"></a></h2><p>To use this function, you must first run <tt>modismoa_install</tt>.  You will only need to run it once.  The installation script downloads the data and formats it in a way that is efficient for the <tt>modismoa</tt> function to call. This installation script may take some time to run because it downloads a few gigabytes of data.</p><p>If your network administrator has imposed strict firewall settings, the automatic download may fail. If this happens, simply download these the following files manually, place them in your current folder, and try to run the installation script again:</p><p><a href="ftp://sidads.colorado.edu/pub/DATASETS/nsidc0593_moa2009/geotiff/moa125_2009_hp1_v1.1.tif.gz">2009 125 m</a> <a href="ftp://sidads.colorado.edu/pub/DATASETS/nsidc0593_moa2009/geotiff/moa750_2009_hp1_v1.1.tif.gz">2009 750 m</a> <a href="ftp://sidads.colorado.edu/pub/DATASETS/nsidc0593_moa2009/coastlines/moa_2009_coastline_v1.1.txt">2009 coast</a> <a href="ftp://sidads.colorado.edu/pub/DATASETS/nsidc0593_moa2009/coastlines/moa_2009_groundingline_v1.1.txt">2009 grounding line</a> <a href="ftp://sidads.colorado.edu/pub/DATASETS/nsidc0280_moa2004/geotiff/moa125_2004_hp1_v1.1.tif.gz">2004 125 m</a> <a href="ftp://sidads.colorado.edu/pub/DATASETS/nsidc0280_moa2004/geotiff/moa750_2004_hp1_v1.1.tif.gz">2004 750 m</a> <a href="ftp://sidads.colorado.edu/pub/DATASETS/nsidc0280_moa2004/coastlines/moa_2004_coastline_v1.1.txt">2004 coast</a> <a href="ftp://sidads.colorado.edu/pub/DATASETS/nsidc0280_moa2004/coastlines/moa_2004_groundingline_v1.1.txt">2004 grounding line</a> <a href="ftp://sidads.colorado.edu/pub/DATASETS/MOA/moa750_r1_hp1.img.gz">legacy data</a></p><h2>Example 1: Plot a Mosaic of Antarctica<a name="5"></a></h2><p>Here we create a simple image of the whole continent. Calling the <tt>modismoa</tt> function without any arguments will plot the 750 meter hp1 dataset, downsampled to 3750 meter resolution</p><pre class="codeinput">modismoa
+</pre><img vspace="5" hspace="5" src="modismoa_demo_01.png" alt=""> <h2>Example 2: Plot coast line and grounding line<a name="6"></a></h2><p>Plotting the coast line of Antarctica is nearly as easy as showing the Mosaic of Antarctica:</p><pre class="codeinput">close <span class="comment">% (closes previous figure)</span>
+modismoa <span class="string">'coast'</span>
+</pre><img vspace="5" hspace="5" src="modismoa_demo_02.png" alt=""> <p>Now overlay a grounding line in blue:</p><pre class="codeinput">close
+modismoa(<span class="string">'gl'</span>,<span class="string">'color'</span>,<span class="string">'m'</span>)
+</pre><img vspace="5" hspace="5" src="modismoa_demo_03.png" alt=""> <h2>Example 3: MOA plot zoomed based on name of a location<a name="8"></a></h2><p>Here's a map of Pine Island Glacier:</p><pre class="codeinput">close
+modismoa(<span class="string">'pine island glacier'</span>)
+</pre><img vspace="5" hspace="5" src="modismoa_demo_04.png" alt=""> <h2>Example 4: MOA plot of a specified width<a name="9"></a></h2><p>A 1000-km-wide image of the area surrounding McMurdo Station.</p><pre class="codeinput">close
+modismoa(<span class="string">'McMurdo Station'</span>,1000)
+scalebar(<span class="string">'color'</span>,<span class="string">'white'</span>)
+</pre><img vspace="5" hspace="5" src="modismoa_demo_05.png" alt=""> <h2>Example 5: Centering on arbitrary geographic coordinates<a name="10"></a></h2><p>Below we center a map on some arbitrary geographic coordinates (67S,116E) and overlay a green grounding line.</p><pre class="codeinput">close
+modismoa(-67.1,115,200)
+modismoa(<span class="string">'gl'</span>,<span class="string">'color'</span>,<span class="string">'green'</span>)
+scalebar(<span class="string">'length'</span>,50,<span class="string">'color'</span>,<span class="string">'w'</span>,<span class="string">'location'</span>,<span class="string">'southeast'</span>)
+</pre><img vspace="5" hspace="5" src="modismoa_demo_06.png" alt=""> <h2>Example 6: Include an inset<a name="11"></a></h2><p>Below, a 1200-kilometer-wide map is centered about Dyer Plateau and an inset is placed in the upper right-hand corner of the image:</p><pre class="codeinput">close
+modismoa(<span class="string">'Dyer Plateau'</span>,1200,<span class="string">'inset'</span>,<span class="string">'northeast'</span>)
+</pre><img vspace="5" hspace="5" src="modismoa_demo_07.png" alt=""> <h2>Example 7: Specify a year<a name="12"></a></h2><p>MODIS MOA data are currently available for 2004 and 2009. Here's a comparison of grounding lines:</p><pre class="codeinput">figure
+modismoa(<span class="string">'pine island glacier'</span>,200)
+modismoa(<span class="string">'gl'</span>,<span class="string">'color'</span>,<span class="string">'green'</span>,<span class="string">'2004'</span>)
+modismoa(<span class="string">'gl'</span>,<span class="string">'color'</span>,<span class="string">'magenta'</span>,<span class="string">'2009'</span>)
+modismoa(<span class="string">'coast'</span>,<span class="string">'color'</span>,<span class="string">'blue'</span>,<span class="string">'2004'</span>)
+modismoa(<span class="string">'coast'</span>,<span class="string">'color'</span>,<span class="string">'red'</span>,<span class="string">'2009'</span>)
+scalebar(<span class="string">'location'</span>,<span class="string">'northeast'</span>,<span class="string">'length'</span>,50)
+</pre><img vspace="5" hspace="5" src="modismoa_demo_08.png" alt=""> <p>Similarly, you can include a year with an image map. Here we zoom in on (64.9 S,60.2 W):</p><pre class="codeinput">close
+figure(<span class="string">'position'</span>,[100 100 900 400])
+subplot(1,2,1)
+modismoa(-64.9,-60.2,200,<span class="string">'2004'</span>)
+scalebar(<span class="string">'color'</span>,<span class="string">'w'</span>,<span class="string">'location'</span>,<span class="string">'northeast'</span>,<span class="string">'length'</span>,50)
+text(0,1,<span class="string">'MOA2004'</span>,<span class="string">'units'</span>,<span class="string">'normalized'</span>,<span class="keyword">...</span>
+    <span class="string">'backgroundcolor'</span>,<span class="string">'w'</span>,<span class="keyword">...</span>
+    <span class="string">'verticalalignment'</span>,<span class="string">'top'</span>,<span class="keyword">...</span>
+    <span class="string">'horizontalalignment'</span>,<span class="string">'left'</span>)
+
+subplot(1,2,2)
+modismoa(-64.9,-60.2,200,<span class="string">'2009'</span>)
+text(0,1,<span class="string">'MOA2009'</span>,<span class="string">'units'</span>,<span class="string">'normalized'</span>,<span class="keyword">...</span>
+    <span class="string">'backgroundcolor'</span>,<span class="string">'w'</span>,<span class="keyword">...</span>
+    <span class="string">'verticalalignment'</span>,<span class="string">'top'</span>,<span class="keyword">...</span>
+    <span class="string">'horizontalalignment'</span>,<span class="string">'left'</span>)
+</pre><img vspace="5" hspace="5" src="modismoa_demo_09.png" alt=""> <h2>Example 8: Specify resolution<a name="14"></a></h2><p>By default, the <tt>modismoa</tt> chooses a resolution depending on the size of the map you're plotting.  Maps smaller than 400 kilometers in width have plot 125 meter resolution data, but maps between 400 and 2000 kilometers in width plot 750 meter resolution data.  If you would like to plot a 600-kilometer-wide map at 125 meter resolution, you can do so as shown below. You will notice that plotting large maps at high resolution may take some time to load and render the data.</p><pre class="codeinput">close
+modismoa(<span class="string">'lambert glacier'</span>,600,<span class="string">'resolution'</span>,125,<span class="string">'inset'</span>,<span class="string">'southwest'</span>)
+</pre><img vspace="5" hspace="5" src="modismoa_demo_10.png" alt=""> <h2>Example 9: Specify contrast<a name="15"></a></h2><p>Adjusting contrast can help illuminate flow lines or other features. Specifying contrast will not work on continent-wide maps which are heavily downsampled and use a different range of brightness levels, but if you're zooming in to your favorite region, setting contrast can be accomplished with the <tt>'contrast'</tt> option, or by tinkering with <tt>caxis</tt> values after you've plotted the <tt>modismoa</tt> image.  Below we plot most of MOA's option contrast levels (skipping <tt>'vlc'</tt> to make it fit). In addition to MOA's options, you may set your own numeric range of brigtness levels.</p><pre class="codeinput">figure(<span class="string">'position'</span>,[100 100 900 600])
+subplot(2,3,1)
+modismoa(<span class="string">'rutford ice stream'</span>,100,<span class="string">'contrast'</span>,<span class="string">'ulc'</span>)
+scalebar(<span class="string">'length'</span>,25,<span class="string">'location'</span>,<span class="string">'southeast'</span>)
+text(0,.95,<span class="string">' ulc contrast'</span>,<span class="string">'units'</span>,<span class="string">'normalized'</span>,<span class="string">'backgroundcolor'</span>,<span class="string">'w'</span>)
+
+subplot(2,3,2)
+modismoa(<span class="string">'rutford ice stream'</span>,100,<span class="string">'contrast'</span>,<span class="string">'lc'</span>)
+text(0,.95,<span class="string">' lc contrast'</span>,<span class="string">'units'</span>,<span class="string">'normalized'</span>,<span class="string">'backgroundcolor'</span>,<span class="string">'w'</span>)
+
+subplot(2,3,3)
+modismoa(<span class="string">'rutford ice stream'</span>,100,<span class="string">'contrast'</span>,<span class="string">'moa'</span>)
+text(0,.95,<span class="string">' default contrast'</span>,<span class="string">'units'</span>,<span class="string">'normalized'</span>,<span class="string">'backgroundcolor'</span>,<span class="string">'w'</span>)
+
+subplot(2,3,4)
+modismoa(<span class="string">'rutford ice stream'</span>,100,<span class="string">'contrast'</span>,<span class="string">'hc'</span>)
+text(0,.95,<span class="string">' hc contrast'</span>,<span class="string">'units'</span>,<span class="string">'normalized'</span>,<span class="string">'backgroundcolor'</span>,<span class="string">'w'</span>)
+
+subplot(2,3,5)
+modismoa(<span class="string">'rutford ice stream'</span>,100,<span class="string">'contrast'</span>,<span class="string">'vhc'</span>)
+text(0,.95,<span class="string">' vhc contrast'</span>,<span class="string">'units'</span>,<span class="string">'normalized'</span>,<span class="string">'backgroundcolor'</span>,<span class="string">'w'</span>)
+
+subplot(2,3,6)
+modismoa(<span class="string">'rutford ice stream'</span>,100,<span class="string">'contrast'</span>,<span class="string">'uhc'</span>)
+text(0,.95,<span class="string">' uhc contrast'</span>,<span class="string">'units'</span>,<span class="string">'normalized'</span>,<span class="string">'backgroundcolor'</span>,<span class="string">'w'</span>)
+</pre><img vspace="5" hspace="5" src="modismoa_demo_11.png" alt=""> <h2>Example 10: Mimic MOA's logo<a name="16"></a></h2><p>This example plots the MOA logo.  It requires Kelly Kearney's <a href="http://www.mathworks.com/matlabcentral/fileexchange/9615"><tt>plotboxpos</tt></a> and my <a href="http://www.mathworks.com/matlabcentral/fileexchange/46872-intuitive-rgb-color-values-from-xkcd/content/demo/html/rgb_demo.html"><tt>rgb</tt></a> function.</p><pre class="codeinput"><span class="comment">% Plot continent:</span>
+antmap(<span class="string">'oceancolor'</span>,<span class="string">'k'</span>,<span class="string">'northernlimit'</span>,-65)
+modismoa
+caxis([80 110])
+plotm(-81.4,-163,80,<span class="string">'rs'</span>,<span class="string">'markerfacecolor'</span>,<span class="string">'w'</span>);
+
+<span class="comment">% Create text:</span>
+text(-.39,.29,<span class="string">'MOA'</span>,<span class="string">'fontname'</span>,<span class="string">'helvetica cv'</span>,<span class="string">'fontsize'</span>,40,<span class="keyword">...</span>
+    <span class="string">'fontweight'</span>,<span class="string">'bold'</span>,<span class="string">'color'</span>,rgb(<span class="string">'light blue'</span>),<span class="keyword">...</span>
+    <span class="string">'verticalalignment'</span>,<span class="string">'bottom'</span>)
+plot([-.39 .39],[.29 .29],<span class="string">'w-'</span>,<span class="string">'linewidth'</span>,2);
+text(-.39,.29,<span class="string">'MODIS Mosaic of Antarctica'</span>,<span class="string">'fontname'</span>,<span class="string">'helvetica cv'</span>,<span class="keyword">...</span>
+    <span class="string">'fontsize'</span>,21,<span class="string">'fontangle'</span>,<span class="string">'italic'</span>,<span class="string">'fontweight'</span>,<span class="string">'bold'</span>,<span class="keyword">...</span>
+    <span class="string">'color'</span>,<span class="string">'w'</span>,<span class="string">'verticalalignment'</span>,<span class="string">'top'</span>)
+
+<span class="comment">% Get position of axis in figure and create inset axes:</span>
+p=plotboxpos(gca);
+axes(<span class="string">'position'</span>,[p(1)+.02 p(2)+.02 p(3)/2.8 p(4)/2.8])
+
+<span class="comment">% Plot inset:</span>
+modismoa(-81.4,-163,80,<span class="string">'contrast'</span>,<span class="string">'very high'</span>)
+set(gca,<span class="string">'visible'</span>,<span class="string">'on'</span>,<span class="string">'xcolor'</span>,<span class="string">'w'</span>,<span class="string">'ycolor'</span>,<span class="string">'w'</span>)
+</pre><img vspace="5" hspace="5" src="modismoa_demo_12.png" alt=""> <p>Indeed, the red lines are not plotted, because they're awkward.</p><h2>Citing these Data<a name="18"></a></h2><p>When citing MODIS MOA data, please cite the following:</p><p>Haran, T., J. Bohlander, T. Scambos, T. Painter, and M. Fahnestock. 2014. MODIS Mosaic of Antarctica 2008-2009 <a href="http://dx.doi.org/10.7265/N5KP8037">(MOA2009)</a> Image Map 2009. [indicate subset used]. Boulder, Colorado USA: National Snow and Ice Data Center.</p><p>Scambos, T., T. Haran, M. Fahnestock, T. Painter, and J. Bohlander. 2007. MODIS-based Mosaic of Antarctica (MOA) data sets: Continent-wide Surface Morphology and Snow Grain Size. Remote Sensing of Environment <a href="http://dx.doi.org/10.1016/j.rse.2006.12.020">111(2): 242-257</a>.</p><p>Bohlander, J., T. Scambos, T. Haran, M. Fahnestock, 2004. A New MODIS- based Mosaic of Antarctica: MOA. Eos. Trans. AGU, 85(47), F452.</p><h2>Author Info<a name="19"></a></h2><p>This function was created by Chad A. Greene of the Institute for Geophysics and The University of Texas at Austin, July 2014. Updated August 2014.</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2012b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% |modismoa| version 4 
+% The |modismoa| function plots Moderate Resolution Imaging 
+% Spectroradiometer (MODIS) Mosaic of Antarctica (MOA) images, grounding
+% lines and coastlines. Plotted data are high-pass 1. 
+% 
+% This function is a plugin for Chad Greene's <http://www.mathworks.com/matlabcentral/fileexchange/47638 
+% Antarctic Mapping Tools> package. 
+% 
+% *From the file description on the National Snow and Ice Data Center 
+% (<http://nsidc.org/data/moa/ NSIDC>) website:* 
+% 
+% The National Snow and Ice Data Center (NSIDC) and the University of New Hampshire assembled two digital 
+% image maps and two snow-grain-size images of the Antarctic continent and surrounding islands that provide 
+% a nearly-perfect cloud-free view of the ice sheet, ice shelves, and land surfaces using two different 
+% sets of data:
+% 
+% * MODIS Mosaic of Antarctica 2003-2004 (MOA2004) Image Map
+% * MODIS Mosaic of Antarctica 2008-2009 (MOA2009) Image Map.
+% 
+% The MOA2004 Image Map consists of two cloud-free digital image maps that show mean surface morphology 
+% and a quantitative measure of optical snow grain size on the Antarctic continent and surrounding islands 
+% using 260 orbit swaths from the Moderate Resolution Imaging Spectroradiometer (MODIS) instruments on board 
+% the NASA EOS Aqua and Terra satellites. The 260 orbit swaths used to create the 2003-2004 MOA Surface 
+% Morphology Image Map was acquired 20 November 2003 through 29 February 2004 for the full spring-summer season. 
+% Corresponding coastlines and ice sheet grounding lines are also provided.
+
+%% Syntax 
+% 
+%  modismoa
+%  modismoa(lat,lon) 
+%  modismoa('location') 
+%  modismoa(...,mapwidth) 
+%  modismoa(...,'year')
+%  modismoa(...,'inset','insetLocation')
+%  modismoa(...,'resolution',res)
+%  modismoa(...,'contrast',ContrastOption)
+%  modismoa(...,'clearocean')
+%  modismoa('gl') 
+%  modismoa('gl','propertyName',propertyValue)
+%  modismoa('coast') 
+%  modismoa('coast','propertyName',propertyValue)
+%  h = modismoa(...)
+
+%% Description 
+% 
+% |modismoa| plots a polar stereographic 71 image of Antarctica. 
+% 
+% |modismoa(lat,lon)| centers a 500-kilometer-wide map at the
+% location given by |lat|, |lon|.
+% 
+% |modismoa('location')| searches the <http://www.scar.org/ SCAR>
+% database for the specified |'location'| and centers a map at that location. (See the
+% |scarloc| function in the Bedmap2 Toolbox for Matlab). 
+%
+% |modismoa(...,mapwidth)| centers a |mapwidth|-kilometer map at the specified
+% location.  Default mapwidth is 500 km. 
+% 
+% |modismoa(...,'year')| specifies a year of MODIS MOA image, grounding
+% line, or coast line.  The year must be a string (enclosed by apostrophes)
+% and can only be |'2004'| or |'2009'|. Default year is |'2009'|.  
+% 
+% |modismoa(...,,'inset','location')| places an inset at one of these
+% cardinal value locations: 
+%
+% * |'southeast'|   lower right corner (default)
+% * |'northwest'|   upper left corner
+% * |'northeast'|   upper right corner
+% * |'southwest'|   lower left corner
+% 
+% |modismoa(...,'resolution',res)| specifies the resolution of the plotted
+% data.  Can be 750 m, 125 m, or |'downsampled'|.  By default, a map of
+% width greater than 2000 km will plot 750 m data downsampled to 3750 m;
+% for 400 < mapwidth <= 2000 km, 750 m resolution data are plotted; for
+% maps up to 400 kilometers wide, 125 m data are plotted. Plotting 125 m
+% data for very large areas might crash your computer. 
+%
+% |modismoa(...,'contrast',ContrastOption)| specifies contrast, or the axis
+% limits of the color scale when plotting 125 m or non-downsampled 750 m 
+% resolution data. Specifying contrast on a large downsampled 750 image
+% will have no effect. Following the contrast options described in the
+% web-based <http://nsidc.org/data/moa/users_guide.html MOA map users'
+% guide>, |ContrastOption| may be:
+% 
+% * |'uhc'|     (ultra-high contrast |[15875 16125]|)
+% * |'vhc'|  	(very high contrast |[15800 16200]|)
+% * |'hc'|  	(high contrast |[15500 16500]|)
+% * |'moa'|  	(nominal contrast |[15000 17000]|)
+% * |'lc'|   	(low contrast |[12000 20000]|)
+% * |'vlc'|  	(very low contrast |[9000 23000]|)
+% * |'ulc'|   	(ultra-low contrast |[1 32000]|)
+% * |NumericRange| (any two-element range) 
+% 
+% Setting contrast to a |NumericRange| is equivalent to following the
+% |modismoa| command with |caxis(NumericRange)|. 
+% 
+% |modismoa(...,'clearocean')| sets all zero values to |NaN| to make the ocean
+% clear. Note that this usage may still leave dark edges around the continent.
+% If you would like to plot ocean data alongside a |modismoa| image, consider
+% plotting the |modismoa| image first. 
+%
+% |modismoa('gl')| plots the MODIS MOA grounding line. 
+%
+% |modismoa('gl','propertyName',propertyValue)| formats the grounding line
+% with name-value marker style properties. 
+%
+% |modismoa('cl')| plots the MODIS MOA coast line. 
+%
+% |modismoa('cl','propertyName',propertyValue)| formats the coast line
+% with name-value marker style properties. 
+%
+% |h = modismoa(...)| returns the handle |h| of plotted object(s). 
+
+%% Requirements
+% This function requires Matlab's Mapping Toolbox and the Antarctic Mapping 
+% Tools package, which is available free of charge on the Mathworks File Exchange
+% site. 
+
+%% Installation 
+% To use this function, you must first run |modismoa_install|.  You will
+% only need to run it once.  The installation script downloads the data and
+% formats it in a way that is efficient for the |modismoa| function to
+% call. This installation script may take some time to run because it
+% downloads a few gigabytes of data.  
+% 
+% If your network administrator has imposed strict firewall settings, the 
+% automatic download may fail. If this happens, simply download these the
+% following files manually, place them in your current folder, and try to run the
+% installation script again:
+% 
+% <ftp://sidads.colorado.edu/pub/DATASETS/nsidc0593_moa2009/geotiff/moa125_2009_hp1_v1.1.tif.gz 2009 125 m>
+% <ftp://sidads.colorado.edu/pub/DATASETS/nsidc0593_moa2009/geotiff/moa750_2009_hp1_v1.1.tif.gz 2009 750 m>
+% <ftp://sidads.colorado.edu/pub/DATASETS/nsidc0593_moa2009/coastlines/moa_2009_coastline_v1.1.txt 2009 coast>
+% <ftp://sidads.colorado.edu/pub/DATASETS/nsidc0593_moa2009/coastlines/moa_2009_groundingline_v1.1.txt 2009 grounding line>
+% <ftp://sidads.colorado.edu/pub/DATASETS/nsidc0280_moa2004/geotiff/moa125_2004_hp1_v1.1.tif.gz 2004 125 m>
+% <ftp://sidads.colorado.edu/pub/DATASETS/nsidc0280_moa2004/geotiff/moa750_2004_hp1_v1.1.tif.gz 2004 750 m>
+% <ftp://sidads.colorado.edu/pub/DATASETS/nsidc0280_moa2004/coastlines/moa_2004_coastline_v1.1.txt 2004 coast>
+% <ftp://sidads.colorado.edu/pub/DATASETS/nsidc0280_moa2004/coastlines/moa_2004_groundingline_v1.1.txt 2004 grounding line>
+% <ftp://sidads.colorado.edu/pub/DATASETS/MOA/moa750_r1_hp1.img.gz legacy data> 
+
+%% Example 1: Plot a Mosaic of Antarctica
+% Here we create a simple image of the whole continent. Calling the
+% |modismoa| function without any arguments will plot the 750 meter hp1
+% dataset, downsampled to 3750 meter resolution
+
+modismoa 
+
+%% Example 2: Plot coast line and grounding line
+% Plotting the coast line of Antarctica is nearly as easy as showing the
+% Mosaic of Antarctica:
+
+close % (closes previous figure) 
+modismoa 'coast'
+
+%% 
+% Now overlay a grounding line in blue:
+
+close
+modismoa('gl','color','m') 
+
+%% Example 3: MOA plot zoomed based on name of a location 
+% Here's a map of Pine Island Glacier:
+
+close 
+modismoa('pine island glacier') 
+
+%% Example 4: MOA plot of a specified width
+% A 1000-km-wide image of the area surrounding McMurdo Station.
+
+close 
+modismoa('McMurdo Station',1000)
+scalebar('color','white')
+
+
+%% Example 5: Centering on arbitrary geographic coordinates
+% Below we center a map on some arbitrary geographic coordinates (67S,116E)
+% and overlay a green grounding line.  
+
+close
+modismoa(-67.1,115,200)
+modismoa('gl','color','green')
+scalebar('length',50,'color','w','location','southeast')
+
+%% Example 6: Include an inset
+% Below, a 1200-kilometer-wide map is centered about Dyer Plateau and an
+% inset is placed in the upper right-hand corner of the image: 
+
+close
+modismoa('Dyer Plateau',1200,'inset','northeast')
+
+%% Example 7: Specify a year
+% MODIS MOA data are currently available for 2004 and 2009. Here's a
+% comparison of grounding lines: 
+
+figure
+modismoa('pine island glacier',200) 
+modismoa('gl','color','green','2004')
+modismoa('gl','color','magenta','2009') 
+modismoa('coast','color','blue','2004') 
+modismoa('coast','color','red','2009')
+scalebar('location','northeast','length',50)
+
+%% 
+% Similarly, you can include a year with an image map. Here we zoom in on
+% (64.9 S,60.2 W): 
+
+close
+figure('position',[100 100 900 400])
+subplot(1,2,1)
+modismoa(-64.9,-60.2,200,'2004')
+scalebar('color','w','location','northeast','length',50)
+text(0,1,'MOA2004','units','normalized',...
+    'backgroundcolor','w',...
+    'verticalalignment','top',...
+    'horizontalalignment','left')
+
+subplot(1,2,2)
+modismoa(-64.9,-60.2,200,'2009') 
+text(0,1,'MOA2009','units','normalized',...
+    'backgroundcolor','w',...
+    'verticalalignment','top',...
+    'horizontalalignment','left')
+
+%% Example 8: Specify resolution
+% By default, the |modismoa| chooses a resolution depending on the size of
+% the map you're plotting.  Maps smaller than 400 kilometers in width have
+% plot 125 meter resolution data, but maps between 400 and 2000 kilometers
+% in width plot 750 meter resolution data.  If you would like to plot a
+% 600-kilometer-wide map at 125 meter resolution, you can do so as shown below.
+% You will notice that plotting large maps at high resolution may take some
+% time to load and render the data. 
+
+close  
+modismoa('lambert glacier',600,'resolution',125,'inset','southwest')
+
+%% Example 9: Specify contrast
+% Adjusting contrast can help illuminate flow lines or other features.
+% Specifying contrast will not work on continent-wide maps which are
+% heavily downsampled and use a different range of brightness levels, but
+% if you're zooming in to your favorite region, setting contrast can be
+% accomplished with the |'contrast'| option, or by tinkering with |caxis|
+% values after you've plotted the |modismoa| image.  Below we plot most of
+% MOA's option contrast levels (skipping |'vlc'| to make it fit). In
+% addition to MOA's options, you may set your own numeric range of
+% brigtness levels. 
+
+figure('position',[100 100 900 600])
+subplot(2,3,1)
+modismoa('rutford ice stream',100,'contrast','ulc')
+scalebar('length',25,'location','southeast')
+text(0,.95,' ulc contrast','units','normalized','backgroundcolor','w')
+
+subplot(2,3,2)
+modismoa('rutford ice stream',100,'contrast','lc')
+text(0,.95,' lc contrast','units','normalized','backgroundcolor','w')
+
+subplot(2,3,3)
+modismoa('rutford ice stream',100,'contrast','moa')
+text(0,.95,' default contrast','units','normalized','backgroundcolor','w')
+
+subplot(2,3,4)
+modismoa('rutford ice stream',100,'contrast','hc')
+text(0,.95,' hc contrast','units','normalized','backgroundcolor','w')
+
+subplot(2,3,5)
+modismoa('rutford ice stream',100,'contrast','vhc')
+text(0,.95,' vhc contrast','units','normalized','backgroundcolor','w')
+
+subplot(2,3,6)
+modismoa('rutford ice stream',100,'contrast','uhc')
+text(0,.95,' uhc contrast','units','normalized','backgroundcolor','w')
+
+
+%% Example 10: Mimic MOA's logo
+% This example plots the MOA logo.  It requires Kelly Kearney's <http://www.mathworks.com/matlabcentral/fileexchange/9615
+% |plotboxpos|> and my <http://www.mathworks.com/matlabcentral/fileexchange/46872-intuitive-rgb-color-values-from-xkcd/content/demo/html/rgb_demo.html
+% |rgb|> function.  
+
+% Plot continent:
+antmap('oceancolor','k','northernlimit',-65)
+modismoa
+caxis([80 110])
+plotm(-81.4,-163,80,'rs','markerfacecolor','w');
+
+% Create text: 
+text(-.39,.29,'MOA','fontname','helvetica cv','fontsize',40,...
+    'fontweight','bold','color',rgb('light blue'),...
+    'verticalalignment','bottom')
+plot([-.39 .39],[.29 .29],'w-','linewidth',2);
+text(-.39,.29,'MODIS Mosaic of Antarctica','fontname','helvetica cv',...
+    'fontsize',21,'fontangle','italic','fontweight','bold',...
+    'color','w','verticalalignment','top')
+
+% Get position of axis in figure and create inset axes: 
+p=plotboxpos(gca); 
+axes('position',[p(1)+.02 p(2)+.02 p(3)/2.8 p(4)/2.8])
+
+% Plot inset:
+modismoa(-81.4,-163,80,'contrast','very high')
+set(gca,'visible','on','xcolor','w','ycolor','w')
+
+%% 
+% Indeed, the red lines are not plotted, because they're awkward.  
+
+%% Citing these Data
+% When citing MODIS MOA data, please cite the following: 
+% 
+% Haran, T., J. Bohlander, T. Scambos, T. Painter, and M. Fahnestock. 2014. 
+% MODIS Mosaic of Antarctica 2008-2009 <http://dx.doi.org/10.7265/N5KP8037
+% (MOA2009)> Image Map 2009. [indicate subset used]. Boulder, Colorado USA:
+% National Snow and Ice Data Center. 
+% 
+% Scambos, T., T. Haran, M. Fahnestock, T. Painter, and J. Bohlander. 2007. 
+% MODIS-based Mosaic of Antarctica (MOA) data sets: Continent-wide Surface Morphology 
+% and Snow Grain Size. Remote Sensing of Environment <http://dx.doi.org/10.1016/j.rse.2006.12.020
+% 111(2): 242-257>. 
+% 
+% Bohlander, J., T. Scambos, T. Haran, M. Fahnestock, 2004. A New MODIS-
+% based Mosaic of Antarctica: MOA. Eos. Trans. AGU, 85(47), F452.
+
+%% Author Info 
+% This function was created by Chad A. Greene of the Institute for
+% Geophysics and The University of Texas at Austin, July 2014. Updated
+% August 2014. 
+
+##### SOURCE END #####
+--></body></html>
