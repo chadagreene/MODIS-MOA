@@ -3,10 +3,12 @@
 * **`modismoa`** (not recommended) same as `modismoaps`, but this function is for use with Matlab's Mapping Toolbox. 
 
 # Requirements 
-You'll need [Antarctic Mapping Tools for Matlab](https://github.com/chadagreene/Antarctic-Mapping-Tools) (Greene et al., 2017). You'll also need to download the data, (which might require an EarthData login), described below.
+You'll need [Antarctic Mapping Tools for Matlab](https://github.com/chadagreene/Antarctic-Mapping-Tools) (Greene et al., 2017). You'll also need to download the data, described below.
 
 # Data Download 
-To use these functions, you'll need to download the image mosaics. For each year, a 750 m resolution and a 125 m version are necessary because the `modismoaps` function automatically switches between the two datasets, depending on the area of the map extents. If you on
+To use these functions, you'll need to download the image mosaics. For each year, a 750 m resolution and a 125 m version are necessary because the `modismoaps` function automatically switches between the two datasets, depending on the area of the map extents. 
+
+Log into Earthdata and download the following: 
 
 ### 2014 mosaic:
 By default, the `modismoaps` function plots the 2014 highpass filtered image mosaics. Download them here:
