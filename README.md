@@ -1,5 +1,5 @@
 # File Descriptions 
-* **[`modismoaps`](doc/html/modismoaps_documentation.html)** plots a MODIS Mosaic of Antarctica image on a polar stereographic map. Also plots grounding lines or coastlines. 
+* **`modismoaps`** plots a MODIS Mosaic of Antarctica image on a polar stereographic map. Also plots grounding lines or coastlines. 
 * **`modismoa`** (not recommended) same as `modismoaps`, but this function is for use with Matlab's Mapping Toolbox. 
 
 # Requirements 
