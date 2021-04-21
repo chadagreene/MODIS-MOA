@@ -1,84 +1,9 @@
-% modismoa download and installation script. 
+% THIS IS LEGACY SCRIPT. 
+% IT'S NO LONGER NEEDED. And I don't think it even works. 
+% But in case you're interested how the grounding lines and coastlines
+% were turned into .mat files, that stuff's at the bottom. 
 % 
-% This function downloads (if necessary) and reformats MODIS Mosaic of
-% Antarctica data for use by the modismoa function. This installation script only 
-% needs to be run once.  Expect it to take ~10 minutes on a modern laptop
-% computer.  Expect longer if you have not already downloaded the data.
-% Expect it to take very long if you have not downloaded the data and you
-% have a slow internet connection. 
-% 
-% This script was written by Chad A. Greene of the Institute for Geophysics
-% and the University of Texas at Austin, July 2014. 
-% Updated August as a plugin for Antarctic Mapping Tools. 
-% I'll be updating this script to include MOA2014 as
-% soon as the MOA2014 data are available. 
-% 
-% Requirements: 
-% This installation script requires the Antarctic Mapping Tools package for
-% Matlab. The modismoa function (the reason you are running this installation 
-% script) requires Matlab's Mapping Toolbox. 
-% 
-% 
-% The MOA mosaic is a composite image of 260 MODIS (Moderate Resolution
-% Imaging Spectroradiometer) images acquired over the 2003-2004 austral
-% summer season. It provides a nearly-perfect cloud-free view of the ice
-% sheet, ice shelves, and land surfaces at a grid scale of 125 m, and
-% estimated resolution of 150 m. All land areas and islands (larger than a
-% few hundred meters) south of 60 deg S are included in the mosaic, as well
-% as several persistent fast ice areas and some grounded icebergs. Two image
-% data sets were compiled: a digitally smoothed red-light (band 1 of MODIS)
-% image map; and a snow grain size image (normalized difference of calibrated
-% band 1 and band 2 MODIS data).
-% 
-% The data are available via ftp and a mapserver website.
-% 
-%% Citing these Data
-% When citing MODIS MOA data, please cite the following: 
-% 
-% Haran, T., J. Bohlander, T. Scambos, T. Painter, and M. Fahnestock. 2014. 
-% MODIS Mosaic of Antarctica 2008-2009 <http://dx.doi.org/10.7265/N5KP8037
-% (MOA2009)> Image Map 2009. [indicate subset used]. Boulder, Colorado USA:
-% National Snow and Ice Data Center. 
-% 
-% Scambos, T., T. Haran, M. Fahnestock, T. Painter, and J. Bohlander. 2007. 
-% MODIS-based Mosaic of Antarctica (MOA) data sets: Continent-wide Surface Morphology 
-% and Snow Grain Size. Remote Sensing of Environment <http://dx.doi.org/10.1016/j.rse.2006.12.020
-% 111(2): 242-257>. 
-% 
-% Bohlander, J., T. Scambos, T. Haran, M. Fahnestock, 2004. A New MODIS-
-% based Mosaic of Antarctica: MOA. Eos. Trans. AGU, 85(47), F452.
-
-%% Installation 
-% To use the modismoa function, you must first run modismoa_install.  You will
-% only need to run it once.  The installation script downloads the data and
-% formats it in a way that is efficient for the modismoa function to
-% call. This installation script may take some time to run because it
-% downloads about 2.5 GB of data.  
-% 
-% If your network administrator has imposed strict firewall settings, the 
-% automatic download may fail. If this happens, simply download these five
-% files manually, place them in your current folder, and try to run the
-% installation script again:
-%  
-% ftp://sidads.colorado.edu/pub/DATASETS/nsidc0593_moa2009/geotiff/moa125_2009_hp1_v1.1.tif.gz
-% ftp://sidads.colorado.edu/pub/DATASETS/nsidc0593_moa2009/geotiff/moa750_2009_hp1_v1.1.tif.gz
-% ftp://sidads.colorado.edu/pub/DATASETS/nsidc0593_moa2009/coastlines/moa_2009_coastline_v1.1.txt
-% ftp://sidads.colorado.edu/pub/DATASETS/nsidc0593_moa2009/coastlines/moa_2009_groundingline_v1.1.txt
-% ftp://sidads.colorado.edu/pub/DATASETS/nsidc0280_moa2004/geotiff/moa125_2004_hp1_v1.1.tif.gz
-% ftp://sidads.colorado.edu/pub/DATASETS/nsidc0280_moa2004/geotiff/moa750_2004_hp1_v1.1.tif.gz
-% ftp://sidads.colorado.edu/pub/DATASETS/nsidc0280_moa2004/coastlines/moa_2004_coastline_v1.1.txt
-% ftp://sidads.colorado.edu/pub/DATASETS/nsidc0280_moa2004/coastlines/moa_2004_groundingline_v1.1.txt
-% ftp://sidads.colorado.edu/pub/DATASETS/MOA/moa750_r1_hp1.img.gz
-
-%% Author Info: 
-% This script was written by Chad A. Greene of the Institute for Geophysics
-% and The University of Texas at Austin in July of 2014. If you run into
-% any problems, let me know at chad@chadagreene.com.  For verification purposes
-% I'm also interested in hearing if the modismoa function works.  If it
-% works, let me know what operating system you're using and what
-% release of Matlab you have.  
-
-
+% -Chad A. Greene. 
 
 %% Download and/or unzip 750 meter .tif data from 2009: 
 
