@@ -285,7 +285,7 @@ fclose(fid);
 gllat = C{2}; 
 gllon = C{1}; 
 readme = 'data from moa_2004_groundingline_v02.0.txt. Saved by modismoa_install.m';
-save moagl2004 cllat cllon readme
+save moagl2004 gllat gllon readme
 
 fid = fopen('moa_2009_coastline_v02.0.txt'); 
     C = textscan(fid,'%f %f');
@@ -301,7 +301,7 @@ fclose(fid);
 gllat = C{2}; 
 gllon = C{1}; 
 readme = 'data from moa_2009_groundingline_v02.0.txt. Saved by modismoa_install.m';
-save moagl2009 cllat cllon readme
+save moagl2009 gllat gllon readme
 
 
 
