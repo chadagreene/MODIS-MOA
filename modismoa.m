@@ -202,6 +202,9 @@ if any(tmp)
 
             case {'moa_ulc','ulc','ul','ultra low'} 
                 BrightnessRange = [1 32000];
+                
+            case {'white','w'}
+                BrightnessRange = [1 17000]; % white-ish
 
             otherwise
                 error('Invalid contrast range. Must be a string (e.g., ''vhc'') or numeric range (e.g. [15800 16200]).')
@@ -222,15 +225,15 @@ end
 % Get inset settings: 
 tmp = strcmpi(varargin,'inset'); 
 if any(tmp) 
-        try
-            insetLocation = varargin{find(tmp)+1}; 
-            tmp(find(tmp)+1) = 1; 
+    try
+        insetLocation = varargin{find(tmp)+1}; 
+        tmp(find(tmp)+1) = 1; 
 
-        catch 
-            insetLocation = 'southeast'; 
-        end
-        inset = true; 
-        varargin = varargin(~tmp); 
+    catch 
+        insetLocation = 'southeast'; 
+    end
+    inset = true; 
+    varargin = varargin(~tmp); 
 end
 
 
