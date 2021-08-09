@@ -22,7 +22,7 @@ By default, the `modismoaps` function plots the 2014 highpass filtered image mos
 You'll only need to download the 2009 data if you specifically want to plot the 2009 mosaic rather than the default 2014. I like to have them all available to me, because sometimes it's helpful to see how the surface has changed over time. Here's the 2009 data (You'll need to unzip the 2009 & 2004 data): 
 
 * [https://daacdata.apps.nsidc.org/pub/DATASETS/nsidc0593\_moa2009\_v02/geotiff/moa750\_2009\_hp1\_v02.0.tif.gz](https://daacdata.apps.nsidc.org/pub/DATASETS/nsidc0593_moa2009_v02/geotiff/moa750_2009_hp1_v02.0.tif.gz)
-* [https://daacdata.apps.nsidc.org/pub/DATASETS/nsidc0593\_moa2009\_v02/geotiff/moa125\_2009\_hp1\_v02.0.tif.gz](https://daacdata.apps.nsidc.org/pub/DATASETS/nsidc0593_moa2009_v02/geotiff/moa750_2009_hp1_v02.0.tif.gz)
+* [https://daacdata.apps.nsidc.org/pub/DATASETS/nsidc0593\_moa2009\_v02/geotiff/moa125\_2009\_hp1\_v02.0.tif.gz](https://daacdata.apps.nsidc.org/pub/DATASETS/nsidc0593\_moa2009\_v02/geotiff/moa125\_2009\_hp1\_v02.0.tif.gz)
 
 ### 2004 mosaic (optional): 
 * [https://daacdata.apps.nsidc.org/pub/DATASETS/nsidc0280\_moa2004\_v02/geotiff/moa750\_2004\_hp1\_v02.0.tif.gz](https://daacdata.apps.nsidc.org/pub/DATASETS/nsidc0280_moa2004_v02/geotiff/moa750_2004_hp1_v02.0.tif.gz)
